@@ -70,6 +70,8 @@ Sigue estos pasos para clonar y ejecutar el proyecto en tu máquina local:
 
 ¡Cualquier tipo de contribución es más que bienvenida! 🎉 Si tienes alguna idea para mejorar el proyecto o quieres colaborar con nuevas funcionalidades, sigue estos pasos:
 
+Seguimiento de las tareas del proyecto: https://trello.com/b/V8axPqdz/project-uno
+
 1. Haz un **fork** del repositorio.
 2. Crea una nueva rama:
     ```bash
