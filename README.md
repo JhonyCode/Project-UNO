@@ -75,7 +75,7 @@ Seguimiento de las tareas del proyecto: https://trello.com/b/V8axPqdz/project-un
 1. Haz un **fork** del repositorio.
 2. Crea una nueva rama:
     ```bash
-    git checkout -b feature/nueva-funcionalidad
+    git checkout -b feature/nombre-de-la-tarea
     ```
 3. Realiza tus cambios y **commitea**:
     ```bash
@@ -83,7 +83,7 @@ Seguimiento de las tareas del proyecto: https://trello.com/b/V8axPqdz/project-un
     ```
 4. Sube tus cambios a tu repositorio:
     ```bash
-    git push origin feature/nueva-funcionalidad
+    git push origin feature/nombre-de-la-tarea
     ```
 5. Abre un **Pull Request** y explícanos tus mejoras.
 
