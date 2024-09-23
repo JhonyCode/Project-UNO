@@ -91,7 +91,7 @@ Sigue estos pasos para clonar y ejecutar el proyecto en tu máquina local:
 
 Si tienes alguna duda o sugerencia, no dudes en contactarme. ¡Estoy más que dispuesto a colaborar y escuchar tus ideas!
 
-**Email**: tuemail@example.com  
+**Email**: j.mulerodev@gmail.com
 **LinkedIn**: [Jonathan Mulero](https://www.linkedin.com/in/jonathan-mulero/)
 
 ---
