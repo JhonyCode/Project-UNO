@@ -1,11 +1,12 @@
 // utils/generarMazo.js
+const Carta = require('../models/Carta');
+
+const colores = ['rojo', 'verde', 'azul', 'amarillo'];
+const especiales = ['+2', 'reversa', 'salto'];
+const comodines = ['comodin', 'comodin+4'];
+
 const generarMazo = async (guardarEnMongoDB = false) => {
   let mazo = [];
-
-  const colores = ['rojo', 'verde', 'azul', 'amarillo'];
-  const especiales = ['+2', 'reversa', 'salto'];
-  const comodines = ['comodin', 'comodin+4'];
-
   let id = 0; // Inicializa el contador de IDs
 
   // Cartas numeradas (0-9)
