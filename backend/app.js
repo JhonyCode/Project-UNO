@@ -1,11 +1,12 @@
 const express = require('express');
-const generarMazo = require('./utils/generarMazo'); // Asegúrate de importar la función generarMazo correctamente
+const generarMazo = require('./utils/generarMazo');
 const app = express();
 const PORT = 3000;
 
 // Ruta para generar el mazo y devolverlo como JSON
-app.get('/', async (req, res) => {
+app.get('/generar-mazo', async (req, res) => {
   try {
+    // Genera el mazo sin guardarlo en la base de datos. Si le pones 'true', lo guardará en la base de datos.
     const mazo = await generarMazo(false); 
     res.json(mazo); 
   } catch (error) {
@@ -14,6 +15,12 @@ app.get('/', async (req, res) => {
   }
 });
 
+// Ruta básica para probar el servidor
+app.get('/', (req, res) => {
+  res.send('Hello World');
+});
+
+// Iniciar el servidor
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
