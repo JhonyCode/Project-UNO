@@ -11,6 +11,6 @@ router.post("/games/:id/draw", apiController.postIdDraw);
 router.post("/games/:id/play", apiController.postIdPlay);
 router.get("/games/:id", apiController.getId);
 router.get("/games/:id/deck", apiController.getIdDeck);
-router.get("/games/:id/players", apiController.getIdPlayers)
+router.get("/games/:id/players", apiController.getIdPlayers);
 
 module.exports = router;
