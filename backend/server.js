@@ -7,7 +7,7 @@ dotenv.config(); // Cargar las variables de entorno
 connectDB(); // Conectar a MongoDB
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json()); // Para poder recibir JSON en las solicitudes
 
