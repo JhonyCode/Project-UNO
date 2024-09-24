@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { Usuario, Partida, Carta } = require('../models/Index');
+const { Usuario, Partida, Carta } = require('../Models/Index');
 
 // Ejemplo de ruta para obtener todos los usuarios
 router.get('/usuarios', async (req, res) => {

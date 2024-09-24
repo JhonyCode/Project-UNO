@@ -3,7 +3,7 @@ const express = require('express');
 //Importamos express para poder usar router para generar las rutas
 const router = express.Router();
 //Importamos apiController para generar rutas a los endpoints
-const apiController = require("../Controller/apiController");
+const apiController = require("../Controller/ApiController");
 
 router.post("/games/:id", apiController.postGames);
 router.post("/games/:id/join", apiController.postIdJoin);

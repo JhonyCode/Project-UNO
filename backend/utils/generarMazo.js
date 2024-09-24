@@ -1,5 +1,5 @@
 // utils/generarMazo.js
-const Carta = require('../models/Carta');
+const Carta = require('../Models/Carta');
 
 const colores = ['rojo', 'verde', 'azul', 'amarillo'];
 const especiales = ['+2', 'reversa', 'salto'];
