@@ -1,7 +1,7 @@
 const express = require('express');
 const generateDeck = require('./utils/generateDeck');
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const connectDB = require('./config/db');  // Importa la conexión a la base de datos
 require('dotenv').config();  // Cargar las variables de entorno
 
