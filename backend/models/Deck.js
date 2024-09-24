@@ -10,7 +10,8 @@ const cardSchema = new mongoose.Schema({
 
 // Define el esquema de mazo
 const deckSchema = new mongoose.Schema({
-  cards: [cardSchema]  // Arreglo de cartas
+  cards: [cardSchema],  // Arreglo de cartas
+  inUse: { type: Boolean, default: false } // Asegúrate de que inUse esté aquí
 });
 
 // Crea el modelo de Deck

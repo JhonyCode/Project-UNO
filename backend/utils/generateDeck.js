@@ -1,10 +1,11 @@
-const Deck = require('../models/Deck'); 
+const Deck = require('../models/Deck'); // Asegúrate de que la ruta sea correcta
 
+// Define los colores y cartas especiales
 const colors = ['red', 'green', 'blue', 'yellow'];
 const specialCards = ['+2', 'reverse', 'skip'];
 const wildCards = ['wild', 'wild+4'];
 
-const generateDeck = async (saveToMongoDB = false) => {
+const generateDeck = async () => {
   let deck = [];
 
   // Cartas numeradas (0-9)
@@ -19,7 +20,7 @@ const generateDeck = async (saveToMongoDB = false) => {
     }
   });
 
-  // Cartas especiales (+2, reversa, salto) para cada color
+  // Cartas especiales
   colors.forEach(color => {
     specialCards.forEach(special => {
       deck.push({ color, value: special, type: 'special', playable: true });
@@ -27,25 +28,23 @@ const generateDeck = async (saveToMongoDB = false) => {
     });
   });
 
-  // Cartas comodín (sin color)
+  // Cartas comodín
   wildCards.forEach(wild => {
     for (let i = 0; i < 4; i++) {
       deck.push({ color: null, value: wild, type: 'special', playable: true });
     }
   });
 
-  // Guardar el mazo en MongoDB si se indica
-  if (saveToMongoDB) {
-    try {
-      const newDeck = new Deck({ cards: deck }); // Crea un nuevo documento de Deck
-      await newDeck.save(); // Guarda el nuevo mazo en MongoDB
-      console.log('Deck saved to MongoDB successfully.');
-    } catch (error) {
-      console.error('Error saving deck:', error);
-    }
+  // Guardar el mazo en MongoDB
+  try {
+    const newDeck = new Deck({ cards: deck }); // Crea un nuevo documento de Deck
+    await newDeck.save(); // Guarda el nuevo mazo en MongoDB
+    console.log('Deck saved to MongoDB successfully.');
+    return newDeck; // Devuelve el mazo guardado
+  } catch (error) {
+    console.error('Error saving deck:', error);
+    return null; // Asegúrate de devolver null o un valor que indique un error
   }
-
-  return deck;
 };
 
 module.exports = generateDeck;
