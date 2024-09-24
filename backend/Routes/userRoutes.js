@@ -1,11 +1,17 @@
-//Importamos express
 const express = require('express');
-//Importamos express para poder usar router para generar las rutas
 const router = express.Router();
-//Importamos apiController para generar rutas a los endpoints
-const userController = require("../Controller/userController");
+const User = require('../models/User'); 
 
-router.post("/create/create-user", userController.postCreateUser);
-
+router.post('/', async (req, res) => {
+  const { username, email, password } = req.body;
+  try {
+    const newUser = new User({ username, email, password }); 
+    await newUser.save();
+    res.status(201).json(newUser); // Devolvemos el usuario creado
+  } catch (error) {
+    console.error('Error creating user:', error);
+    res.status(500).json({ error: 'Error creating user' });
+  }
+});
 
 module.exports = router;
