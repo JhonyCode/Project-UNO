@@ -1,5 +1,5 @@
-const Carta = require('./Carta');
-const Usuario = require('./Usuario');
-const Partida = require('./Partida');
+const Card = require('./Card');
+const User = require('./User');
+const Game = require('./Game');
 
-module.exports = { Carta, Usuario, Partida };
+module.exports = { Card, User, Game };
