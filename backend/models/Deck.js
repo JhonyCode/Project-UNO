@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+// Define el esquema de carta
 const cardSchema = new mongoose.Schema({
   color: { type: String, enum: ['red', 'green', 'blue', 'yellow', null], required: false },
   value: { type: String, required: true }, // Número o tipo de carta especial
@@ -7,5 +8,11 @@ const cardSchema = new mongoose.Schema({
   playable: { type: Boolean, default: true }
 });
 
-const Card = mongoose.model('Card', cardSchema);
-module.exports = Card;
+// Define el esquema de mazo
+const deckSchema = new mongoose.Schema({
+  cards: [cardSchema]  // Arreglo de cartas
+});
+
+// Crea el modelo de Deck
+const Deck = mongoose.model('Deck', deckSchema);
+module.exports = Deck;
