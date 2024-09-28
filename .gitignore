@@ -7,3 +7,6 @@
 
 # Ignorar archivo env
 /backend/.env
+
+# Ignorar archivo secret.js
+/backend/secret.js
